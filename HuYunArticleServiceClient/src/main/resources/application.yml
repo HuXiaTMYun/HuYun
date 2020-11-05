@@ -1,0 +1,38 @@
+server:
+  port: 8770
+
+#配置Eureka,制定注册中心地址
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8760/eureka/
+
+#服务器名称
+spring:
+  application:
+    name: articleService
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://119.45.151.23:3306/blogs
+    username: 1998bf
+    password: 1998bf
+    #配置redis
+# redis:
+#    host: 192.168.2.211
+#    port: 6379
+feign:
+  #Hystrix熔断器：容错管理工具，旨在通过熔断机制控制服务和第三方库的节点从而对延迟和故障提供更加强大的容错能力
+  hystrix:
+    enabled: true
+#设置日志记录级别
+logging:
+  level:
+    com.boot: debug
+    org.springframework: info
+
+mybatis:
+  #配置实体类别名包路劲
+  type-aliases-package: com.example.huyun.entity
+  #mapper-locations: classpath:mappers/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
