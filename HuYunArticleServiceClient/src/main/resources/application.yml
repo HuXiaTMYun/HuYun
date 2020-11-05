@@ -1,38 +1,31 @@
 server:
   port: 8770
 
-#ÅäÖÃEureka,ÖÆ¶¨×¢²áÖĞĞÄµØÖ·
+#é…ç½®Eureka,åˆ¶å®šæ³¨å†Œä¸­å¿ƒåœ°å€
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8760/eureka/
 
-#·şÎñÆ÷Ãû³Æ
+#æœåŠ¡å™¨åç§°
 spring:
+  profiles:
+    active: ${spring.profiles.active}
   application:
     name: articleService
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://119.45.151.23:3306/blogs
-    username: 1998bf
-    password: 1998bf
-    #ÅäÖÃredis
-# redis:
-#    host: 192.168.2.211
-#    port: 6379
 feign:
-  #HystrixÈÛ¶ÏÆ÷£ºÈİ´í¹ÜÀí¹¤¾ß£¬Ö¼ÔÚÍ¨¹ıÈÛ¶Ï»úÖÆ¿ØÖÆ·şÎñºÍµÚÈı·½¿âµÄ½Úµã´Ó¶ø¶ÔÑÓ³ÙºÍ¹ÊÕÏÌá¹©¸ü¼ÓÇ¿´óµÄÈİ´íÄÜÁ¦
+  #Hystrixç†”æ–­å™¨ï¼šå®¹é”™ç®¡ç†å·¥å…·ï¼Œæ—¨åœ¨é€šè¿‡ç†”æ–­æœºåˆ¶æ§åˆ¶æœåŠ¡å’Œç¬¬ä¸‰æ–¹åº“çš„èŠ‚ç‚¹ä»è€Œå¯¹å»¶è¿Ÿå’Œæ•…éšœæä¾›æ›´åŠ å¼ºå¤§çš„å®¹é”™èƒ½åŠ›
   hystrix:
     enabled: true
-#ÉèÖÃÈÕÖ¾¼ÇÂ¼¼¶±ğ
+#è®¾ç½®æ—¥å¿—è®°å½•çº§åˆ«
 logging:
   level:
     com.boot: debug
     org.springframework: info
 
 mybatis:
-  #ÅäÖÃÊµÌåÀà±ğÃû°üÂ·¾¢
+  #é…ç½®å®ä½“ç±»åˆ«ååŒ…è·¯åŠ²
   type-aliases-package: com.example.huyun.entity
-  #mapper-locations: classpath:mappers/*.xml
+  mapper-locations: classpath:mappers/*.xml
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

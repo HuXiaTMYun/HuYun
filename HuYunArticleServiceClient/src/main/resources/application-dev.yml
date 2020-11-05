@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://119.45.151.23:3306/blogs
+    username: 1998bf
+    password: 1998bf
+  redis:
+    host: 119.45.151.23
+    port: 6379
+    password: www.1998bf.com
